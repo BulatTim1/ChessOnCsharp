@@ -4,6 +4,13 @@ using System.IO;
 
 namespace ChessCore
 {
+    //for future review
+    struct Point
+    {
+        int X;
+        int Y;
+    }
+    
     abstract public class Figure
     {
         protected int X, Y; //x - (1..8), y - a..h
@@ -62,13 +69,13 @@ namespace ChessCore
             return IsRightMove(coords[0], coords[1]);
         }
 
-        public virtual bool Move(string xy) //{a..h}{1..8}
+        public bool Move(string xy) //{a..h}{1..8}
         {
             int[] coords = StringToXY(xy);
             return Move(coords[0], coords[1]);
         }
 
-        public bool Move(int x2, int y2)    //0..7, 0..7
+        public virtual bool Move(int x2, int y2)    //0..7, 0..7
         {
             if (IsRightMove(x2, y2))
             {

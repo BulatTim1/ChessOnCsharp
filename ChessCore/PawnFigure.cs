@@ -14,6 +14,7 @@ namespace ChessCore
         }
         
         private bool firstMove = false;
+        private bool black = true;
 
         public PawnFigure(int x, int y) : base(x, y)
         {
@@ -27,15 +28,19 @@ namespace ChessCore
 
         public override bool IsRightMove(int x2, int y2)
         {
-            return ((X == x2 && firstMove
-                    && (Math.Abs(y2 - Y) == 1 || Math.Abs(y2 - Y) == 2))
-                || (X == x2 && Math.Abs(y2 - Y) == 1));
+            return X == x2 && 
+                (firstMove && 
+                black && (y2 - Y == 1 || y2 - Y == 2) ||
+                (!black && (y2 - Y == -1 || y2 - Y == -2)
+                ) || 
+                (black && y2 - Y == 1) ||
+                (!black && y2 - Y == -1));
             //TODO: collision with another figures
         }
 
-        public override bool Move(string xy)
+        public override bool Move(int x, int y)
         {
-            bool res = base.Move(xy);
+            bool res = base.Move(x, y);
             if (res)
             {
                 firstMove = false;

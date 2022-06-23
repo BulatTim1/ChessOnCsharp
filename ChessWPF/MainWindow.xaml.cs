@@ -19,7 +19,7 @@ namespace ChessWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChessBoardWindow : Window
     {
         Gameboard board;
         int activeX = -1, activeY = -1;
@@ -27,7 +27,7 @@ namespace ChessWPF
 
         List<Label> labels;
         
-        public MainWindow()
+        public ChessBoardWindow()
         {
             InitializeComponent();
             board = new Gameboard();

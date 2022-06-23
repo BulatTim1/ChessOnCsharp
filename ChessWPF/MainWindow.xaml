@@ -154,7 +154,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <ComboBox Grid.Column="0" Grid.Row="0" Margin="20,100,20,0" Height="20" Width="90" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <ComboBox Grid.Column="0" Grid.Row="0" FontSize="18" Margin="20,100,20,0" Height="auto" Width="90" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <TextBlock>King</TextBlock>
                 <TextBlock>Queen</TextBlock>
                 <TextBlock>Bishop</TextBlock>

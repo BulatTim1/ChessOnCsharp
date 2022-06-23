@@ -24,17 +24,9 @@ namespace ChessCore
 
         public Figure(string xy)
         {
-            try
-            {
-                int[] coords = StringToXY(xy);
-                X = coords[0];
-                Y = coords[1];
-            }
-            catch (InvalidDataException)
-            {
-                Console.WriteLine("Invalid string!"); //its right?
-                return;
-            }
+            int[] coords = StringToXY(xy);
+            X = coords[0];
+            Y = coords[1];
         }
 
         protected int[] StringToXY(string xy)   //{a..h},{1..8} -> {0..7},{0..7}
@@ -66,36 +58,14 @@ namespace ChessCore
 
         public bool IsRightMove(string xy)
         {
-            int x2, y2;
-            try
-            {
-                int[] coords = StringToXY(xy);
-                x2 = coords[0];
-                y2 = coords[1];
-            }
-            catch (InvalidDataException)
-            {
-                Console.WriteLine("Invalid string!"); //its right?
-                return false;
-            }
-            return IsRightMove(x2, y2);
+            int[] coords = StringToXY(xy);
+            return IsRightMove(coords[0], coords[1]);
         }
 
         public virtual bool Move(string xy) //{a..h}{1..8}
         {
-            int x2, y2;
-            try
-            {
-                int[] coords = StringToXY(xy);
-                x2 = coords[0];
-                y2 = coords[1];
-            }
-            catch (InvalidDataException)
-            {
-                Console.WriteLine("Invalid string!"); //its right?
-                return false;
-            }
-            return Move(x2, y2);
+            int[] coords = StringToXY(xy);
+            return Move(coords[0], coords[1]);
         }
 
         public bool Move(int x2, int y2)    //0..7, 0..7

@@ -5,6 +5,14 @@ namespace ChessCore
 {
     public class PawnFigure : Figure
     {
+        public override string Type
+        {
+            get
+            {
+                return "Pawn";
+            }
+        }
+        
         private bool firstMove = false;
 
         public PawnFigure(int x, int y) : base(x, y)
@@ -14,14 +22,14 @@ namespace ChessCore
 
         public PawnFigure(string xy) : base(xy)
         {
-            if (y == 1 || y == 6) firstMove = true;
+            if (Y == 1 || Y == 6) firstMove = true;
         }
 
         public override bool isRightMove(int x2, int y2)
         {
-            return ((x == x2 && firstMove
-                    && (Math.Abs(y2 - y) == 1 || Math.Abs(y2 - y) == 2))
-                || (x == x2 && Math.Abs(y2 - y) == 1));
+            return ((X == x2 && firstMove
+                    && (Math.Abs(y2 - Y) == 1 || Math.Abs(y2 - Y) == 2))
+                || (X == x2 && Math.Abs(y2 - Y) == 1));
             //TODO: collision with another figures
         }
 

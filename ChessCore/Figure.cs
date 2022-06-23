@@ -6,12 +6,20 @@ namespace ChessCore
 {
     abstract public class Figure
     {
-        protected int x, y; //x - (1..8), y - a..h
+        protected int X, Y; //x - (1..8), y - a..h
+
+        public virtual string Type
+        {
+            get 
+            { 
+                return "Figure";
+            }
+        }
 
         public Figure(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
         }
 
         public Figure(string xy)
@@ -19,8 +27,8 @@ namespace ChessCore
             try
             {
                 int[] coords = StringToXY(xy);
-                x = coords[0];
-                y = coords[1];
+                X = coords[0];
+                Y = coords[1];
             }
             catch (InvalidDataException)
             {
@@ -96,8 +104,8 @@ namespace ChessCore
         {
             if (isRightMove(x2, y2))
             {
-                x = x2;
-                y = y2;
+                X = x2;
+                Y = y2;
                 return true;
             }
             return false;
@@ -105,13 +113,13 @@ namespace ChessCore
 
         public int[] GetCoords()
         {
-            return new int[] { x, y };
+            return new int[] { X, Y };
         }
 
         public string GetCoordsHumanized()
         {
             string xy = "";
-            switch (x)
+            switch (X)
             {
                 case 0: xy += 'a'; break;
                 case 1: xy += 'b'; break;
@@ -122,8 +130,13 @@ namespace ChessCore
                 case 6: xy += 'g'; break;
                 case 7: xy += 'h'; break;
             }
-            xy += (y + 1);
+            xy += (Y + 1);
             return xy;
+        }
+
+        public override string ToString()
+        {
+            return Type;
         }
     }
 }

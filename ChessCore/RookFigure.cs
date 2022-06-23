@@ -4,6 +4,14 @@ namespace ChessCore
 {
     public class RookFigure : Figure
     {
+
+        public override string Type
+        {
+            get
+            {
+                return "Rook";
+            }
+        }
         public RookFigure(int x, int y) : base(x, y)
         {
         }
@@ -14,7 +22,7 @@ namespace ChessCore
 
         public override bool isRightMove(int x2, int y2)
         {
-            return x == x2 || y == y2;
+            return X == x2 || Y == y2;
         }
     }
 }

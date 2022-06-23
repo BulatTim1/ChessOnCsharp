@@ -5,6 +5,13 @@ namespace ChessCore
 {
     public class QueenFigure : Figure
     {
+        public override string Type
+        {
+            get
+            {
+                return "Queen";
+            }
+        }
         public QueenFigure(int x, int y) : base(x, y)
         {
         }
@@ -15,9 +22,9 @@ namespace ChessCore
 
         public override bool isRightMove(int x2, int y2)
         {
-            return (x == x2 && y != y2)
-                || (x != x2 && y == y2)
-                || (Math.Abs(x2 - x) == Math.Abs(y2 - y));
+            return (X == x2 && Y != y2)
+                || (X != x2 && Y == y2)
+                || (Math.Abs(x2 - X) == Math.Abs(y2 - Y));
         }
     }
 }

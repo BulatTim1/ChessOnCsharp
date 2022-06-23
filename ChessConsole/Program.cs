@@ -39,14 +39,18 @@ namespace ChessConsole
             }
 
             bool isCan = figure.isRightMove(moveXY);
-
-            string coords1 = figure.GetCoordsHumanized();
-            figure.Move(moveXY);
-            string coords2 = figure.GetCoordsHumanized();
-
             Console.WriteLine(isCan ? "YES" : "NO");
-            Console.WriteLine($"{figure} on {coords1}");
-            Console.WriteLine($"{figure} moved to {coords2}");
+
+            if (isCan)
+            {
+                string coords1 = figure.GetCoordsHumanized();
+                Console.WriteLine($"{figure} on {coords1}");
+                
+                figure.Move(moveXY);
+                string coords2 = figure.GetCoordsHumanized();
+                Console.WriteLine($"{figure} moved to {coords2}");
+            }
+                
         }
     }
 }

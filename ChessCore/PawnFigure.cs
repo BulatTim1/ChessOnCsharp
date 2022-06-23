@@ -25,7 +25,7 @@ namespace ChessCore
             if (Y == 1 || Y == 6) firstMove = true;
         }
 
-        public override bool isRightMove(int x2, int y2)
+        public override bool IsRightMove(int x2, int y2)
         {
             return ((X == x2 && firstMove
                     && (Math.Abs(y2 - Y) == 1 || Math.Abs(y2 - Y) == 2))

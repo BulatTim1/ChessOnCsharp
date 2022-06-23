@@ -20,7 +20,7 @@ namespace ChessCore
         {
         }
 
-        public override bool isRightMove(int x2, int y2)
+        public override bool IsRightMove(int x2, int y2)
         {
             return (X == x2 && Math.Abs(Y - y2) == 1)
                 || (Math.Abs(X - x2) == 1 && Y == y2)

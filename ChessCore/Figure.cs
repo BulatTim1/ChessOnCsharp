@@ -43,30 +43,28 @@ namespace ChessCore
 
             xy = xy.ToLower();
             char xChar = xy[0];
-            int x, y;
+            int y;
 
             y = (int)xy[1] - '0' - 1;
             if (y < 0 || y > 7) throw new Exception($"Invalid string: {xy}.");
-
-            switch (xChar)
+            var x = xChar switch
             {
-                case 'a': x = 0; break;
-                case 'b': x = 1; break;
-                case 'c': x = 2; break;
-                case 'd': x = 3; break;
-                case 'e': x = 4; break;
-                case 'f': x = 5; break;
-                case 'g': x = 6; break;
-                case 'h': x = 7; break;
-                default: throw new Exception($"Invalid string: {xy}.");
-            }
-
+                'a' => 0,
+                'b' => 1,
+                'c' => 2,
+                'd' => 3,
+                'e' => 4,
+                'f' => 5,
+                'g' => 6,
+                'h' => 7,
+                _ => throw new Exception($"Invalid string: {xy}."),
+            };
             return new int[] { x, y };
         }
 
-        public abstract bool isRightMove(int x2, int y2);
+        public abstract bool IsRightMove(int x2, int y2);
 
-        public virtual bool isRightMove(string xy)
+        public bool IsRightMove(string xy)
         {
             int x2, y2;
             try
@@ -80,7 +78,7 @@ namespace ChessCore
                 Console.WriteLine("Invalid string!"); //its right?
                 return false;
             }
-            return isRightMove(x2, y2);
+            return IsRightMove(x2, y2);
         }
 
         public virtual bool Move(string xy) //{a..h}{1..8}
@@ -102,7 +100,7 @@ namespace ChessCore
 
         public bool Move(int x2, int y2)    //0..7, 0..7
         {
-            if (isRightMove(x2, y2))
+            if (IsRightMove(x2, y2))
             {
                 X = x2;
                 Y = y2;

@@ -24,5 +24,20 @@ namespace ChessWPF
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btn_AddFigure_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        
+        private void btn_DelFigure_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

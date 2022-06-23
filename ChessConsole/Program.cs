@@ -11,34 +11,17 @@ namespace ChessConsole
             char figureChar = Console.ReadLine()[0];
             string figureXY = Console.ReadLine();
             string moveXY = Console.ReadLine();
-
-            Figure figure;
-
-            switch (figureChar)
+            Figure figure = figureChar switch
             {
-                case 'P':
-                    figure = new PawnFigure(figureXY);
-                    break;
-                case 'N':
-                    figure = new KnightFigure(figureXY);
-                    break;
-                case 'B':
-                    figure = new BishopFigure(figureXY);
-                    break;
-                case 'R':
-                    figure = new RookFigure(figureXY);
-                    break;
-                case 'Q':
-                    figure = new QueenFigure(figureXY);
-                    break;
-                case 'K':
-                    figure = new KingFigure(figureXY);
-                    break;
-                default:
-                    throw new Exception("Invalid string.");
-            }
-
-            bool isCan = figure.isRightMove(moveXY);
+                'P' => new PawnFigure(figureXY),
+                'N' => new KnightFigure(figureXY),
+                'B' => new BishopFigure(figureXY),
+                'R' => new RookFigure(figureXY),
+                'Q' => new QueenFigure(figureXY),
+                'K' => new KingFigure(figureXY),
+                _ => throw new Exception("Invalid string."),
+            };
+            bool isCan = figure.IsRightMove(moveXY);
             Console.WriteLine(isCan ? "YES" : "NO");
 
             if (isCan)

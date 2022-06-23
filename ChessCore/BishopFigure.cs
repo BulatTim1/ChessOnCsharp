@@ -21,7 +21,7 @@ namespace ChessCore
         {
         }
 
-        public override bool isRightMove(int x2, int y2)
+        public override bool IsRightMove(int x2, int y2)
         {
             return Math.Abs(x2 - X) == Math.Abs(y2 - Y);
         }

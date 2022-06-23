@@ -162,7 +162,7 @@
                 <TextBlock>Rook</TextBlock>
                 <TextBlock>Pawn</TextBlock>
             </ComboBox>
-            <Button Content="Add Figure" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Click="btn_AddFigure_Click"/>
+            <Button Content="Add Figure" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Click="AddFigure_Click"/>
             <TextBlock Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" TextAlignment="Center" FontSize="18" TextWrapping="WrapWithOverflow">
                 Press right mouse button to delete figure
             </TextBlock>

@@ -30,12 +30,7 @@ namespace ChessWPF
 
         }
 
-        private void btn_AddFigure_Click(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-        
-        private void btn_DelFigure_Click(object sender, MouseButtonEventArgs e)
+        private void AddFigure_Click(object sender, RoutedEventArgs e)
         {
 
         }
